@@ -1,2 +1,2 @@
-# Armis_DoW-IC
-This repo will hold how to guides and other important documents for Armis DoW/IC SE's
+# Armis DoW/IC/NATO/MOD
+This repository contains how-to-guides and troubleshooting guides for Armis IL5 and Federal On-Perm offerings. 
