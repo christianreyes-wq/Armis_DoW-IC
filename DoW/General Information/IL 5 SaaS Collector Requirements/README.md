@@ -13,3 +13,4 @@ This IL5 collector requirements document provides critical collector specificati
   * [Collector Network & Port Requirements](collector-network-port-requirements)
   * [Inbound (Passive Traffic Ingestion)](inbound-passive-traffic-ingestion)
   * [Outbound (Collector to Cloud Transmission)](outboun-collector-to-cloud-transmission)
+---
