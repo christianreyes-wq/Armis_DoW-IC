@@ -35,3 +35,15 @@ Podman must be installed on the RHEL 8.10 virtual machine provided. Armis collec
 
 ## Packet Capture & Network Libraries
 1. libpcap & libpcap-devel: Both of these libraries must be installed as they are crucial for raw network packet sniffing, SPAN/TAP interface monitoring and deep packet inspection.
+2. tcpdump & iproute2: Both of these libraries must be installed as they are for network traffic diagnostic verification and route management within the collector.
+3. ethtool: This library must be installed for tuning network interface capabilities (such as offloading and promiscuous mode settings).
+
+## Cryptography & Transport
+* OpenSSL (v1.1.1 or v3.0+): Must support TLS 1.2 or TLS 1.3 for secure telemetry transport back to the Armis Government Cloud tenant.
+
+## Utility Packages
+* curl & wget: These packages must be installed as they are used during installation and automated collector bundle updates from the Armis Government Cloud tenant.
+* tar, gzip, unzip: These packages are required for extracting update bundles and diagnostic logs.
+
+## Collector Network & Port Requirements
+
