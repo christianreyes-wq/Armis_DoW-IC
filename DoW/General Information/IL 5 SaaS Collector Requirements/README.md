@@ -25,3 +25,10 @@ V-230554: This STIG item requires the OS to not allow for network interfaces to 
 * CPU = 8 CPU (min)
 * RAM = 16 GB (min)
 * Storage = 40 GB SSD (min)
+
+
+## Core OS Dependencies & Packages
+<sub> The host os must have the following system utilities, container runtimes and libraries pre-installed or available via package management prior to installing the Armis Collector application (RPM) on the RHEL 8.10 virtual machine.</sub>
+
+## Container Runtime
+Podman must be installed on the RHEL 8.10 virtual machine provided. Armis collectors run as containerized microservices on the RHEL OS within Podman.
