@@ -19,6 +19,7 @@ RHEL 8 Ver 2 Rel 8 (2026-07-10)
 
 V-230554: This STIG item requires the OS to not allow for network interfaces to be able to be placed within promiscuous mode. A network interface being in promiscuous mode is a requirement for the Armis Government Cloud IL5 collector to ingest mirrored SPAN/TAP traffic without dropping packets. Ensure to inform the client of this as a deviation and acceptance thereof must be documented with their compliance team.
 
+
 ## OS & Hardware Requirements
 * OS = RHEL 8.10
 * CPU = 8 CPU (min)
