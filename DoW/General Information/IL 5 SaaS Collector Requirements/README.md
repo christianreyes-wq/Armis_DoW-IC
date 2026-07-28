@@ -28,7 +28,10 @@ V-230554: This STIG item requires the OS to not allow for network interfaces to 
 
 
 ## Core OS Dependencies & Packages
-<sub> The host os must have the following system utilities, container runtimes and libraries pre-installed or available via package management prior to installing the Armis Collector application (RPM) on the RHEL 8.10 virtual machine.</sub>
+The host os must have the following system utilities, container runtimes and libraries pre-installed or available via package management prior to installing the Armis Collector application (RPM) on the RHEL 8.10 virtual machine.
 
 ## Container Runtime
 Podman must be installed on the RHEL 8.10 virtual machine provided. Armis collectors run as containerized microservices on the RHEL OS within Podman.
+
+## Packet Capture & Network Libraries
+1. libpcap & libpcap-devel: Both of these libraries must be installed as they are crucial for raw network packet sniffing, SPAN/TAP interface monitoring and deep packet inspection.
