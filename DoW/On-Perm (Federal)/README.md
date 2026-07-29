@@ -1,20 +1,17 @@
 # On Perm Federal Central Manager & Collector Requirements
 # Application Based Install *RPM*
 
-This IL5 collector requirements document provides critical collector specifications which are required by the client to successfully deploy an Armis Collector within the Armis Government Cloud (AGC)(IL5) instance.
+This on perm federal central manager & collector requirements document provides critical specifications which are required by the client to successfully deploy Armis on perm.
 
 **Table of Contents**
   * [STIG Deviation](#stig-deviation)
-  * [OS & Hardware Requirements](#os--hardwarSe-requirements)
+  * [Central Manager OS & Hardware Requirements](#central-manager-os--hardware-requirements)
+  * [Edge Collector OS & Hardware Requirements](#edge-collector-os--hardware-requirements)
   * [Core OS Dependencies & Packages](#core-os-dependencies--packages)
   * [Container Runtime](#container-runtime)
   * [Packet Capture & Network Libraries](#packet-capture--network-libraries)
-  * [Cryptography & Transport](#cryptography--transport)
   * [Utility Packages](#utility-packages)
-  * [Collector Network & Port Requirements](#collector-network--port-requirements)
-  * [Inbound (Passive Traffic Ingestion)](#inbound-passive-traffic-ingestion)
-  * [Outbound (Collector to Cloud Transmission)](#outbound-collector-to-cloud-transmission)
-  * [IP Configuration](#ip-configuration)
+  * [Network & Port Requirements](#network--port-requirements)
 ---
 ## STIG Deviation
 RHEL 8 Ver 2 Rel 8 (2026-07-10)
@@ -22,39 +19,47 @@ RHEL 8 Ver 2 Rel 8 (2026-07-10)
 V-230554: This STIG item requires the OS to not allow for network interfaces to be able to be placed within promiscuous mode. A network interface being in promiscuous mode is a requirement for the Armis Government Cloud IL5 collector to ingest mirrored SPAN/TAP traffic without dropping packets. Ensure to inform the client of this as a deviation and acceptance thereof must be documented with their compliance team.
 
 
-## OS & Hardware Requirements
+## Central Manager OS & Hardware Requirements
 * OS = RHEL 8.10
-* CPU = 8 CPU (min)
-* RAM = 16 GB (min)
-* Storage = 40 GB SSD (min)
+* CPU = 8 CPU (min) / 16 CPU (recommended)
+* RAM = 32 GB (min) / 64 GB (recommended)
+* Storage = 500 GB SSD (min) / 1 TB (recommended)
+* Network = 1 Gbps (min) / 10 Gbps (recommended)
+* NICs = 2 (1 Management) (1 collector aggregation) 
 
 
-## Core OS Dependencies & Packages
-The host os must have the following system utilities, container runtimes and libraries pre-installed or available via package management prior to installing the Armis Collector application (RPM) on the RHEL 8.10 virtual machine.
+## Edge Collector OS & Hardware Requirements
+* OS = RHEL 8.10
+* CPU = 8 CPU (min & recommended)
+* RAM = 16 GB (without SPAN) / 32 GB (recommended)
+* Storage = 300 GB (min & recommended)
+* Network = 1 Gbps (min) / 10 Gbps (recommended)
+* NICs = 2 (1 management) (1 Promiscuous SPAN/TAP)
+
+## Core OS Dependencies & Packages:
 
 ## Container Runtime
 Podman must be installed on the RHEL 8.10 virtual machine provided. Armis collectors run as containerized microservices on the RHEL OS within Podman.
 
 ## Packet Capture & Network Libraries
 1. libpcap & libpcap-devel: Both of these libraries must be installed as they are crucial for raw network packet sniffing, SPAN/TAP interface monitoring and deep packet inspection.
-2. tcpdump & iproute2: Both of these libraries must be installed as they are for network traffic diagnostic verification and route management within the collector.
-3. ethtool: This library must be installed for tuning network interface capabilities (such as offloading and promiscuous mode settings).
+2. ethtool & iproute2: Both of these libraries must be installed as they are for network traffic diagnostic verification and route management within the collector.
+3. tcpdump & wireshark-cli (tshark): These libraries must be installed as they are important for diagnostic utilities for verifying traffic flow on SPAN/TAP interfaces.
 
-## Cryptography & Transport
-* OpenSSL (v1.1.1 or v3.0+): Must support TLS 1.2 or TLS 1.3 for secure telemetry transport back to the Armis Government Cloud tenant.
 
 ## Utility Packages
 * curl & wget: These packages must be installed as they are used during installation and automated collector bundle updates from the Armis Government Cloud tenant.
-* tar, gzip, unzip: These packages are required for extracting update bundles and diagnostic logs.
+* coreutils, tar, gzip, unzip: These packages are required for extracting update bundles and diagnostic logs.
 
-## Collector Network & Port Requirements
-## Inbound (Passive Traffic Ingestions)
-* Network SPAN, ERSPAN, or TAP ports for collector interface traffic collection.
-* API connectivity (HTTPS/443) for 3rd party integrations with collector.
+## Network & Port Requirements
+## Central Manager
+* Port 8080 route to Edge Collector
+* Port 8081 for GUI access
 
-## Outbound (Collector to Cloud Transmission)
-* HTTPS (Port 443/TLS 1.3): Outbound encrypted tunnel to the IL5 authorized Armis Government Cloud tenant instance. No inbound internet connection into the collector is required.
-* Armis Government Cloud URL Endpoing: (*.armis.us).
+## Edge Collector
+* Port 8080 for route to Central Manager
+* Port 8081 for GUI access
+* Port 8099 Route to OTM
 
 ## IP Configuration
 * A static IPv4 or IPv6 address with DNS and NTP access is required.
