@@ -8,7 +8,7 @@ This IL5 collector requirements document provides critical collector specificati
   * [Core OS Dependencies & Packages](#core-os-dependencies-packages)
   * [Container Runtime](#container-runtime)
   * [Packet Capture & Network Libraries](#packet-capture--network-libraries)
-  * [Cryptography & Transport](#cryptography-transport)
+  * [Cryptography & Transport](#cryptography--transport)
   * [Utility Packages](#utility-packages)
   * [Collector Network & Port Requirements](#collector-network--port-requirements)
   * [Inbound (Passive Traffic Ingestion)](#inbound-passive-traffic-ingestion)
