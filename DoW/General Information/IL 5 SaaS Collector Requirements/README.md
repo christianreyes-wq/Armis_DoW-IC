@@ -4,7 +4,7 @@ This IL5 collector requirements document provides critical collector specificati
 
 **Table of Contents**
   * [STIG Deviation](#stig-deviation)
-  * [OS & Hardware Requirements](#os-hardware-requirements)
+  * [OS & Hardware Requirements](#os--hardware-requirements)
   * [Core OS Dependencies & Packages](#core-os-dependencies-packages)
   * [Container Runtime](#container-runtime)
   * [Packet Capture & Network Libraries](#packet-capture--network-libraries)
