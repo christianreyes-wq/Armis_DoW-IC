@@ -13,6 +13,7 @@ This IL5 collector requirements document provides critical collector specificati
   * [Collector Network & Port Requirements](#collector-network--port-requirements)
   * [Inbound (Passive Traffic Ingestion)](#inbound-passive-traffic-ingestion)
   * [Outbound (Collector to Cloud Transmission)](#outboun-collector-to-cloud-transmission)
+  * [IP Configuration](#ip-configuration)
 ---
 ## STIG Deviation
 RHEL 8 Ver 2 Rel 8 (2026-07-10)
@@ -53,3 +54,6 @@ Podman must be installed on the RHEL 8.10 virtual machine provided. Armis collec
 ## Outbound (Collector to Cloud Transmission)
 * HTTPS (Port 443/TLS 1.3): Outbound encrypted tunnel to the IL5 authorized Armis Government Cloud tenant instance. No inbound internet connection into the collector is required.
 * Armis Government Cloud URL Endpoing: (*.armis.us).
+
+## IP Configuration
+* A static IPv4 or IPv6 address with DNS and NTP access is required.
