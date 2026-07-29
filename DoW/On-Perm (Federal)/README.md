@@ -48,8 +48,9 @@ Podman must be installed on the RHEL 8.10 virtual machine provided. Armis collec
 
 
 ## Utility Packages
-* curl & wget: These packages must be installed as they are used during installation and automated collector bundle updates from the Armis Government Cloud tenant.
+* curl & wget: These packages must be installed as they are used for troubleshooting purposes.
 * coreutils, tar, gzip, unzip: These packages are required for extracting update bundles and diagnostic logs.
+* chrony: Clock drift across Central Manage and Edge Collectors must remain under 5 seconds for accurate log correlation and TLS validation. 
 
 ## Network & Port Requirements
 ## Central Manager
