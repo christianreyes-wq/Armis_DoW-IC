@@ -49,3 +49,7 @@ Podman must be installed on the RHEL 8.10 virtual machine provided. Armis collec
 ## Inbound (Passive Traffic Ingestions)
 * Network SPAN, ERSPAN, or TAP ports for collector interface traffic collection.
 * API connectivity (HTTPS/443) for 3rd party integrations with collector.
+
+## Outbound (Collector to Cloud Transmission)
+* HTTPS (Port 443/TLS 1.3): Outbound encrypted tunnel to the IL5 authorized Armis Government Cloud tenant instance. No inbound internet connection into the collector is required.
+* Armis Government Cloud URL Endpoing: (*.armis.us).
