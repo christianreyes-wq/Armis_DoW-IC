@@ -5,3 +5,6 @@
 
 2. **Sovereign Cloud:**
    While attending several NATO related conferences within Europe in 2026 a common theme has emerged, Sovereign Cloud. There is a desire across Europe and NATO nations to become independent as much as       possible from US and foreign influence/technology. While a lot of high level NATO personnel know this is not possible entirely, it none the less is a major talking point with current action from          companies in Germany, France and Italy to make it a reality. As an SE the best way to handle this conversation is to inform the prospect that Armis can lift and shift from AWS to a cloud of their         choosing such as STACKIT (Germany). This is critical as the sovereign cloud conversation is becoming common place.
+
+3. **STANAG:**
+   NATO Standardization Agreements (STANAG) is important to understand. A STANAG establishes common operational, logistical, technical procedures for interoperability among NATO nations. A STANAG for our purposes is similar to NIST standards and comes up in conversations. As Armis we need to map our products to NATO Cybersecurity STANAG's as this is common point of topic just like NIST compliance is when talking to traditional US DoW prospects.
