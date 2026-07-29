@@ -46,4 +46,6 @@ Podman must be installed on the RHEL 8.10 virtual machine provided. Armis collec
 * tar, gzip, unzip: These packages are required for extracting update bundles and diagnostic logs.
 
 ## Collector Network & Port Requirements
-
+## Inbound (Passive Traffic Ingestions)
+* Network SPAN, ERSPAN, or TAP ports for collector interface traffic collection.
+* API connectivity (HTTPS/443) for 3rd party integrations with collector.
