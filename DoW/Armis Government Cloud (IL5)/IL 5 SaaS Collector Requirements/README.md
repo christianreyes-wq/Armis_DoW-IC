@@ -12,7 +12,7 @@ This IL5 collector requirements document provides critical collector specificati
   * [Utility Packages](#utility-packages)
   * [Collector Network & Port Requirements](#collector-network--port-requirements)
   * [Inbound (Passive Traffic Ingestion)](#inbound-passive-traffic-ingestion)
-  * [Outbound (Collector to Cloud Transmission)](#outboun-collector-to-cloud-transmission)
+  * [Outbound (Collector to Cloud Transmission)](#outbound-collector-to-cloud-transmission)
   * [IP Configuration](#ip-configuration)
 ---
 ## STIG Deviation
